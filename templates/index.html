@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %}K-Means Clustering Tutorial Page {% endblock %}</h2>
+
+<p>
+In this page I will do a brief tutorial on k-means clustering.  K means clustering is an unsupervised machine learning technique that can group data into n number of specified clusters, 
+in order to gain insight from it.  The centers are determined iteravely and will be described in the following section.  You can click on the links to learn more.  Below is a list of the general 
+steps that is used in k-means clustering.
+</p>
+
+
+<ul>
+  <li style="margin-bottom: 10px;">The first step in algorithm is to pick the number of clusters to use <strong> (n_clusters) </strong>.  Deciding on the number of clusters beforehand is a characteristic
+of k-means algorithm. </li>
+  <li style="margin-bottom: 10px;">The cluster points (centroids) are set in random locations.  Note you can use clustering more dimensions than 2.  </li>
+  <li style="margin-bottom: 10px;">From each data point, we calculate the distance to the nearest cluster's center.  Each data point is grouped under the nearest centroid.  </li>
+  <li style="margin-bottom: 10px;"> The mean of the data points in each cluster is calculated and the center point of the cluster is moved there.  During this relocation, it is possible that the nearest center point may change
+	for certain clusters.  </li>
+  <li style="margin-bottom: 10px;">The mean of the data points in each cluster is calculated and the center point of the cluster is moved there.  During this relocation, it is possible that the nearest center point may change
+	for certain clusters.  </li>
+
+  <li style="margin-bottom: 10px;"> The distances to center points are recalculated.  Process repeats until the centroids/center points have converged and no longer move.  Then process is complete and final clusters 
+       shown.  </li>
+</ul>
+
+
+{% endblock content %}

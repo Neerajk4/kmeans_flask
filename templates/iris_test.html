@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %} K-Means Clustering Test {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+
+{% block body %}
+<h2> K means clustering 2-d demo on Iris Data set </h2>
+<p>Change parameters to get a feel for how k means clustering works on the iris data set.</p>
+
+<div id ="content">
+<form name="log" action="/iris_test" method="post" enctype="multipart/form-data">
+  <label for="column1_name">Choose x axis the use clustering on: </label>
+  <select id="column1_name" name="column1_name">
+    <option value="sepal length (cm)">sepal length (cm)</option>
+    <option value="petal length (cm)">petal length (cm)</option>
+    <option value="sepal width (cm)">sepal width (cm)</option>
+    <option value="petal width (cm)">petal width (cm)</option>
+  </select>
+
+  <label for="column2_name">Choose y axis the use clustering on: </label>
+  <select id="column2_name" name="column2_name">
+    <option value="sepal length (cm)">sepal length (cm)</option>
+    <option value="petal length (cm)">petal length (cm)</option>
+    <option value="sepal width (cm)">sepal width (cm)</option>
+    <option value="petal width (cm)">petal width (cm)</option>
+  </select>
+
+
+ <label for="n_clusters">Enter the number of clusters to use :</label>
+ <input type="text" id="n_clusters" name="n_clusters">
+
+ <input type="submit">
+</form>
+</div>
+
+
+
+    {% if file_exist == True %}
+    <img src="static/uploads/kmeans.png" alt="KMeans_results" width="500" height="333">
+    {% else %} 
+    <p> K means clustering not run yet.  Input parameters to run k-means clustering algorithm. </p>
+    {% endif %}
+{% endblock %}

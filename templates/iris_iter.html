@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %} K-Means Clustering Test {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+
+{% block body %}
+<h2> K means clustering 2-d demo on Iris Data set </h2>
+<p>The graph below gives the first 6 iterations of a 2 dimensional kmeans clustering on the data set. .</p>
+
+    {% if file_exist == True %}
+    <img src="static/uploads/kmeans_iteration.png" alt="KMeans_Iteration_results" width="1000" height="666">
+    {% else %} 
+    <p> K means clustering not run yet.  Input parameters to run k-means clustering algorithm. </p>
+    {% endif %}
+{% endblock %}
